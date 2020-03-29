@@ -12,7 +12,7 @@ d = LCD.PCD8544(23, 24, spi=spiSettings)
 d.begin(contrast=60)
 d.clear()
 d.display ()
-image = Image.new('1', (LCD.LCDWIDTH, LCD.LCDHIGHT))
+image = Image.new('1', (LCD.LCDWIDTH, LCD.LCDHEIGHT))
 draw = ImageDraw(image)
 draw.rectangle((0,0,84,48), outline=255, fill=255)
 

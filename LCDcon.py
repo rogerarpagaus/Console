@@ -25,6 +25,7 @@ draw = ImageDraw.Draw(image)
 #draw.rectangle((0,0,84,48), outline=255, fill=255)
 draw.rectangle((0,0,83,47), outline=0, fill=255)
 font = ImageFont.load_default()
+draw.text ((1,20), "IP adr:", font=font)
 draw.text ((1,30), ip, font=font)
 
 d.image(image)

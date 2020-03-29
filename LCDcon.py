@@ -18,8 +18,6 @@ def get_ip_address(ifname):
         struct.pack('256s', ifname[:15])
     )[20:24])
 
-get_ip_address('wlan0')  # '192.168.0.110'
-
 spiSettings = SPI.SpiDev(0,0, max_speed_hz=4000000)
 d = LCD.PCD8544(23, 24, spi=spiSettings)
 
@@ -35,7 +33,7 @@ draw.rectangle((35,2,54,22), outline=0, fill=255)
 draw.polygon([(63,33), (73,2), (83,22)], outline=0, fill=255)
 
 font = ImageFont.load_default()
-draw.text ((8,30), "", font=font)
+draw.text ((8,30), get_ip_address('wlan0'), font=font)
 
 d.image(image)
 d.display()

@@ -11,6 +11,7 @@ import socket
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 s.connect(("8.8.8.8", 80))
 print(s.getsockname()[0])
+ip=s.getsockname()[0]
 s.close()
 
 spiSettings = SPI.SpiDev(0,0, max_speed_hz=4000000)
@@ -28,7 +29,7 @@ draw.rectangle((35,2,54,22), outline=0, fill=255)
 draw.polygon([(63,33), (73,2), (83,22)], outline=0, fill=255)
 
 font = ImageFont.load_default()
-draw.text ((8,30), s.getsockname()[0], font=font)
+draw.text ((8,30), ip, font=font)
 
 d.image(image)
 d.display()

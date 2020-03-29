@@ -6,7 +6,7 @@ from PIL import ImageDraw
 from PIL import ImageFront
 import time
 
-spiSettings = SPI.SpiDev(0,0 max-speed_hz=4000000)
+spiSettings = SPI.SpiDev(0,0 max_speed_hz=4000000)
 d = LCD.PCD8544(23, 24, spiSettings)
 
 d.begin(contrast060)

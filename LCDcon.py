@@ -6,6 +6,10 @@ from PIL import ImageDraw
 from PIL import ImageFont
 import time
 
+import netifaces as ni
+ni.ifaddresses('wlan0')
+ip = ni.ifaddresses('wlan0')[ni.AF_INET][0]['addr']
+
 spiSettings = SPI.SpiDev(0,0, max_speed_hz=4000000)
 d = LCD.PCD8544(23, 24, spi=spiSettings)
 
@@ -21,7 +25,7 @@ draw.rectangle((35,2,54,22), outline=0, fill=255)
 draw.polygon([(63,33), (73,2), (83,22)], outline=0, fill=255)
 
 font = ImageFont.load_default()
-draw.text ((8,30), 'Hello World', font=font)
+draw.text ((8,30), ip, font=font)
 
 d.image(image)
 d.display()

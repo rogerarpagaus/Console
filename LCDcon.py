@@ -3,7 +3,7 @@ import Adafruit_GPIO.SPI as SPI
 
 from PIL import Image
 from PIL import ImageDraw
-from PIL import ImageFront
+from PIL import ImageFont
 import time
 
 spiSettings = SPI.SpiDev(0,0, max_speed_hz=4000000)

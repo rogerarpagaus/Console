@@ -36,6 +36,5 @@ while (True):
   draw.text ((1,20), "CPU Temp " + str(cpu.temperature) +"C", font=font)
   #draw.text ((1,30), ip, font=fontSmall)
   draw.text ((1,30), ip, font=font)
-
-d.image(image)
-d.display()
+  d.image(image)
+  d.display()

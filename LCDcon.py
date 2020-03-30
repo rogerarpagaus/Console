@@ -39,3 +39,4 @@ while (True):
   draw.text ((1,30), ip, font=font)
   d.image(image)
   d.display()
+  sleep(1)

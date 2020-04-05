@@ -8,7 +8,7 @@ import time
 
 import socket
 
-from gpiozero import CPUTemperature LoadAverage
+from gpiozero import CPUTemperature, LoadAverage
 
 cpu = CPUTemperature()
 print(cpu.temperature)

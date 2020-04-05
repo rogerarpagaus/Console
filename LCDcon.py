@@ -8,10 +8,12 @@ import time
 
 import socket
 
-from gpiozero import CPUTemperature
+from gpiozero import CPUTemperature LoadAverage
 
 cpu = CPUTemperature()
 print(cpu.temperature)
+la = LoadAverage(min_load_average=0, max_load_average=2)
+
 
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 s.connect(("8.8.8.8", 80))
@@ -34,6 +36,7 @@ draw.rectangle((0,0,83,47), outline=0, fill=255)
 font = ImageFont.load_default()
 while (True):
   draw.rectangle((0,0,83,47), outline=0, fill=255)
+  draw.text ((1,10), la, font=font)
   draw.text ((1,20), "CPU t= " + str(round(cpu.temperature,1)) +"C", font=font)
   #draw.text ((1,30), ip, font=fontSmall)
   draw.text ((1,30), ip, font=font)

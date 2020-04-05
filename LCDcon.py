@@ -36,7 +36,7 @@ draw.rectangle((0,0,83,47), outline=0, fill=255)
 font = ImageFont.load_default()
 while (True):
   draw.rectangle((0,0,83,47), outline=0, fill=255)
-  draw.text ((1,10), la, font=font)
+  draw.text ((1,10), str(la), font=font)
   draw.text ((1,20), "CPU t= " + str(round(cpu.temperature,1)) +"C", font=font)
   #draw.text ((1,30), ip, font=fontSmall)
   draw.text ((1,30), ip, font=font)
